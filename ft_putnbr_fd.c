@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:50:43 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/08/16 19:44:27 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:38:47 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	if (n > 9 || n < -9)
+		ft_putnbr_fd(n / 10, fd);
+	else if (n < 0)
+		ft_putchar_fd('-', fd);
+	ft_putchar_fd('0' + n % 10, fd);
 }
