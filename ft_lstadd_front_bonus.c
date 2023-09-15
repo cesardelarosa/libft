@@ -6,12 +6,14 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:56:18 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/14 20:21:00 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:58:07 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *list;
+	new->next = *lst;
 	*lst = new;
 }
