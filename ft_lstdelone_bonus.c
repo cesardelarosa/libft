@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:47:57 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/19 12:58:24 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 21:55:25 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);
 	free(lst);
-}	
+}

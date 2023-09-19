@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:46:58 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/19 16:42:44 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 21:55:03 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		*lst = new;
 		return ;
-	}	
+	}
 	tmp = ft_lstlast(*lst);
 	tmp->next = new;
 }

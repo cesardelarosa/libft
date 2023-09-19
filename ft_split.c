@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:21:30 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/19 20:42:51 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 22:19:40 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,26 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
+static char	**free_split(char **result, int i)
+{
+	while (i > 0)
+		free(result[--i]);
+	free(result);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int			word_count = count_words(s, c);
-	char		**result = (char **)malloc((word_count + 1) * sizeof(char *));
-	int			i = 0;
+	int			word_count;
+	char		**result;
+	int			i;
 	const char	*start;
 
+	word_count = count_words(s, c);
+	result = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
+	i = 0;
 	while (*s && i < word_count)
 	{
 		while (*s == c)
@@ -52,12 +63,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		result[i++] = ft_substr(start, 0, s - start);
 		if (!result[i - 1])
-		{
-			while (i > 0)
-				free(result[--i]);
-			free(result);
-			return (NULL);
-		}
+			return (free_split(result, i));
 	}
 	result[i] = NULL;
 	return (result);

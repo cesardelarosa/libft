@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:48:59 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/19 20:07:34 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 22:38:49 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(content);
 		if (!new_node)
 		{
+			del(content);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
