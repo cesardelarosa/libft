@@ -6,8 +6,17 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:48:42 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/14 20:48:43 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:34:21 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}
