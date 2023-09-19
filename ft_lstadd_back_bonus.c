@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:46:58 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/15 13:39:30 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:41:57 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_lstlast(*lst)->next = new;
-	lst[ft_lstsize(*lst) - 1] = new;
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
