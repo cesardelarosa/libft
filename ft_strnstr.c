@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:32:54 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/08/16 18:51:36 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:14:30 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *str, const char *substr, size_t n)
 	size_t	l;
 
 	l = ft_strlen(substr);
-	while (*str && n-- >= l)
+	while (*(str + 1) && n-- >= l)
 	{
 		if (!ft_strncmp(str, substr, l))
 			return ((char *)str);

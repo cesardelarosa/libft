@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 19:58:55 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/08/12 21:46:01 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:03:38 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (1)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
+		if (*s == '\0')
+			return (NULL);
 		s++;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (NULL);
 }
