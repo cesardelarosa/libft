@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:14:27 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/08/16 19:02:55 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:43:54 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	*ft_calloc(size_t n, size_t s)
 {
-	return (ft_memset(malloc(n * s), 0, n * s));
+	void	*mem;
+
+	mem = malloc(n * s);
+	if (!mem)
+		return (NULL);
+	return (ft_memset(mem, 0, n * s));
 }
