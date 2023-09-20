@@ -20,12 +20,14 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(BONUS_OBJ)
+	touch bonus
 	ar rcs $(NAME) $(BONUS_OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	rm -f bonus
 	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
@@ -33,4 +35,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
