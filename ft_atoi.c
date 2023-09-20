@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 19:01:20 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/08/17 19:47:46 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:07:43 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_atoi(const char *nptr)
 
 	while (*nptr == ' ' || (*nptr >= '\t' && *nptr <= '\r'))
 		nptr++;
-	sgn = 1;
-	if (*nptr == '-')
-		sgn = -1;
+	sgn = (*nptr != '-') - (*nptr == '-');
 	nptr += (*nptr == '-' || *nptr == '+');
 	n = 0;
 	while (*nptr >= '0' && *nptr <= '9')
