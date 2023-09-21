@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:46:58 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/19 21:55:03 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/21 18:34:18 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
+	if (!lst)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;

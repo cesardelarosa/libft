@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:22:14 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/09/15 12:57:22 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2023/09/21 19:04:15 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		size;
-	t_list	*count;
 
 	size = 0;
-	count = lst;
-	while (count)
+	while (lst)
 	{
-		count = count->next;
+		lst = lst->next;
 		size++;
 	}
 	return (size);
