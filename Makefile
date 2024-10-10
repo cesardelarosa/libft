@@ -46,7 +46,7 @@ clean:
 	rm -f .gnl
 	rm -f .bonus
 	rm -f .printf
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
