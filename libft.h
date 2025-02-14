@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 12:06:10 by cde-la-r          #+#    #+#             */
-/*   Updated: 2025/02/14 13:51:13 by cesi             ###   ########.fr       */
+/*   Updated: 2025/02/14 13:53:20 by cesi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_isspace(int c);
 char	*ft_strtok(char *str, const char *delim);
 void	ft_handle_errors(char *prog, char *msg, char *cmd, int exit_code);
+size_t	ft_strcspn(const char *s, const char *reject);
 
 #endif 
