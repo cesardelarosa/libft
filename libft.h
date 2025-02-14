@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 12:06:10 by cde-la-r          #+#    #+#             */
-/*   Updated: 2025/02/14 11:28:16 by cesi             ###   ########.fr       */
+/*   Updated: 2025/02/14 13:51:13 by cesi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ char	**ft_strarray_dup(char **tokens, int start, int end);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_isspace(int c);
 char	*ft_strtok(char *str, const char *delim);
+void	ft_handle_errors(char *prog, char *msg, char *cmd, int exit_code);
 
 #endif 
