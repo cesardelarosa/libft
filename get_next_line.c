@@ -6,18 +6,18 @@
 /*   By: cde-la-r <cde-la-r@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 04:50:34 by cde-la-r          #+#    #+#             */
-/*   Updated: 2023/11/03 14:08:58 by cde-la-r         ###   ########.fr       */
+/*   Updated: 2025/02/18 13:40:36 by cde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <limits.h>
 #include "libft.h"
+#include <limits.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 4242
 #endif
 
 #ifndef OPEN_MAX
@@ -54,10 +54,15 @@ char	*save_tail(char *line)
 	char	*tail;
 
 	next = ft_strchr(line, '\n');
-	if (!next++)
+	if (!next)
 		return (NULL);
-	tail = ft_strdup(next);
+	tail = ft_strdup(next + 1);
 	*next = '\0';
+	if (tail[0] == '\0')
+	{
+		free(tail);
+		return (NULL);
+	}
 	return (tail);
 }
 
@@ -68,6 +73,8 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || fd >= OPEN_MAX)
 		return (NULL);
+	if (!tail[fd])
+		tail[fd] = ft_strdup("");
 	line = read_line(tail[fd], fd);
 	tail[fd] = save_tail(line);
 	return (line);
