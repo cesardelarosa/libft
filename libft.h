@@ -6,7 +6,7 @@
 /*   By: cde-la-r <cde-la-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 12:06:10 by cde-la-r          #+#    #+#             */
-/*   Updated: 2025/03/03 00:04:33 by cesi             ###   ########.fr       */
+/*   Updated: 2025/03/07 13:30:00 by cesi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstget(t_list *lst, int index);
 char	*get_next_line(int fd);
 int		ft_putchar(char c);
 int		ft_putstr(const char *str);
